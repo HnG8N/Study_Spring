@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- BDao의 위치를 알려주기 위해 namespace를 씀 -->
+<?xml-model href=""?>
+<mapper namespace="com.springlec.base.dao.Board_Dao">
+
+	<!-- writeForm에서 입력 버튼을 눌렀을 때 DB에 insert하는 query문 -->
+	<insert id="insertDao">
+		INSERT INTO mvc_board (bName, bContent)
+		VALUES (#{bName}, #{bContent})
+	</insert>
+	<!-- list에서 table의 내용을 DB에서 select하는 query문 -->
+	<select id="listDao" resultType="com.springlec.base.model.Board_Dto">
+		SELECT bId, bName, bContent
+		FROM mvc_board
+	</select>
+	<!-- list에서 X키를 누르면 해당하는 row값을 DB에서 delete하는 query문 -->
+	<delete id="deleteDao">
+		DELETE FROM mvc_board
+		WHERE bId = #{bId}
+	</delete>
+	
+</mapper>

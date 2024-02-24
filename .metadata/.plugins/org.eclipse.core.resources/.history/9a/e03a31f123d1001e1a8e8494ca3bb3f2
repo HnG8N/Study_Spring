@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="test" value="ajax">버튼</button>
+</body>
+<script>
+$(document).ready(function() {
+	$("#test").on("click",function(event) {
+		alert($("#test".val()));
+	});
+});
+</script>
+</html>

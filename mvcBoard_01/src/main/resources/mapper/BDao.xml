@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- BDao의 위치를 알려주기 위해 namespace를 씀 -->
+<mapper namespace="com.springlec.base.dao.BDao">
+
+	<!-- id는 BDao의 method명 -->
+	<select id="listDao" resultType="com.springlec.base.model.BDto">
+		SELECT * FROM mvc_board
+	</select>
+	
+	<!-- BDao.java에서 넘어온 값을 쓰려면 #{}을 써야 함 -->
+	<insert id="writeDao">
+		INSERT INTO mvc_board (bName, bTitle, bContent, bDate)
+		VALUES (#{bName}, #{bTitle}, #{bContent}, NOW())
+	</insert>
+	
+	<!-- 제목을 클릭했을 때 content_view에 보여주기 위한 query -->
+	<select id="contentDao" resultType="com.springlec.base.model.BDto">
+		SELECT bId, bName, bTitle, bContent, bDate
+		FROM mvc_board 
+		WHERE bId = #{bId}
+	</select>
+	
+	<!-- content_view에서 바뀐 내용을 update하는 query -->
+	<update id="updateDao">
+		UPDATE mvc_board
+		SET bName = #{bName} ,bTitle = #{bTitle} ,bContent = #{bContent}
+		WHERE bId = #{bId}
+	</update>
+	
+	<!-- contetn_view에서 삭제를 눌렀을 때 delete하는 query -->
+	<delete id="deleteDao">
+		DELETE FROM mvc_board
+		WHERE bId = #{bId}
+	</delete>
+
+</mapper>

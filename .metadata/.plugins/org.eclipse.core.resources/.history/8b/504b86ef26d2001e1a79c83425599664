@@ -1,0 +1,9 @@
+package com.springlec.base.service.admin;
+
+public interface ProductCrudService {
+	
+	public void ProductInsertTask(String mnctg, String mnname, String mnengname, 
+			String mninfo, String mnimg, String mnprice, String mngram, String mnkcal, String mnprotein, 
+			String mnfat, String mnsugar, String mnnatrum) throws Exception;
+
+}

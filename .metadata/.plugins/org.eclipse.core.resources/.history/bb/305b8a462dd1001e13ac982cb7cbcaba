@@ -1,0 +1,5 @@
+package com.springlec.base.model.admin;
+
+public class LoginVerification_Dto {
+
+}

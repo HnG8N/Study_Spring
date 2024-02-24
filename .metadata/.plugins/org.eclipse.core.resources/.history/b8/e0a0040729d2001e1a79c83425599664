@@ -1,0 +1,29 @@
+package com.springlec.base.service.admin;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.springlec.base.dao.admin.ProductCrudDao;
+
+@Service
+//Transaction을 해주기 위한 명령어 (class 내에서 에러가 걸리면 롤백함)
+@Transactional(rollbackFor = Exception.class)
+public class ProductCrudServiceImpl implements ProductCrudService{
+
+	@Autowired
+	ProductCrudDao dao;
+	
+	@Override
+	public void ProductInsertTask(String mnctg, String mnname, String mnengname, String mninfo,
+			String mnprice, String mngram, String mnkcal, String mnprotein, String mnfat, String mnsugar,
+			String mnnatrum) throws Exception {
+		
+		
+		
+		dao.insertMenuAction(mnctg, mnname, mnengname, mninfo, mnimg, mnprice);
+		dao.insertMenuSpecAction(mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum);
+		
+	}
+
+}

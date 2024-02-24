@@ -1,0 +1,7 @@
+package com.springlec.base.dao.admin;
+
+public interface ProductCrudDao {
+	
+	public void insertMenuAction() throws Exception;
+
+}

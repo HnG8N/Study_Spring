@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Address_Dao의 위치를 알려주기 위해 namespace를 씀 -->
+<mapper namespace="com.springlec.base.dao.Address_Dao">
+	
+	<select id="addressListDao" resultType="com.springlec.base.model.Address_Dto">
+		SELECT seqno, name, telno, address, email, relation
+		FROM addressBook
+	</select>
+	
+	<insert id="addressInsertDao">
+		INSERT INTO addressBook (name, telno, address, email, relation)
+		VALUES (#{name}, #{telno}, #{address}, #{email}, #{relation})
+	</insert>
+	
+	<select id="addressViewDao" resultType="com.springlec.base.model.Address_Dto">
+		SELECT seqno, name, telno, address, email, relation
+		FROM addressBook
+		WHERE seqno = #{seqno}
+	</select>
+	
+	<update id="addressViewUpdateDao">
+		UPDATE addressBook
+		SET name = #{name}, telno = #{telno}, address = #{address}, 
+			email = #{email}, relation = #{relation}
+		WHERE seqno = #{seqno}
+	</update>
+
+	<delete id="addressViewDeleteDao">
+		DELETE FROM addressBook
+		WHERE seqno = #{seqno}
+	</delete>
+	
+	<select id="listQuery" resultType="com.springlec.base.model.Address_Dto">
+		SELECT seqno, name, telno, address, email, relation
+		FROM addressBook
+		WHERE ${query} LIKE #{content} <!-- #{content}에 %를 붙여서 전달 할 때 -->
+<!-- 	WHERE ${query} like concat('%', #{content}, '%') (#{content}에 데이터값만 있을 때)-->	
+	</select>
+	
+</mapper>

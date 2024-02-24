@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Upload</title>
+</head>
+<body>
+    <h1>Image Upload</h1>
+    <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+    <p id="message"></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#uploadForm").submit(function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+
+                $.ajax({
+                    url: "/upload",
+                    method: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        $("#message").text(response);
+                    },
+                    error: function(error) {
+                        console.error(error);
+                        $("#message").text("Error uploading image");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

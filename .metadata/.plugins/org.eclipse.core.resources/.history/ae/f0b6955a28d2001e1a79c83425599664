@@ -1,0 +1,24 @@
+package com.springlec.base.service.admin;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springlec.base.dao.admin.ProductCrudDao;
+
+@Service
+public class ProductCrudServiceImpl implements ProductCrudService{
+
+	@Autowired
+	ProductCrudDao dao;
+	
+	@Override
+	public void ProductInsertTask(String mnctg, String mnname, String mnengname, String mninfo, String mnimg,
+			String mnprice, String mngram, String mnkcal, String mnprotein, String mnfat, String mnsugar,
+			String mnnatrum) throws Exception {
+		
+		dao.insertMenuAction(mnctg, mnname, mnengname, mninfo, mnimg, mnprice);
+		dao.insertMenuSpecAction(mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum);
+		
+	}
+
+}

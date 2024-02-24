@@ -1,0 +1,29 @@
+$(document).ready(function() {
+	
+  // 동적으로 form 요소 생성
+  let dynamicForm = $('<form></form>').attr({
+    'action': 'logout', // 폼이 전송될 액션 URL
+    'method': 'post' // 전송 방식 (POST 또는 GET)
+  });
+
+  // 폼 내에 입력 필드 및 버튼 추가
+  dynamicForm.append('<span class="welcome_logout">');
+  dynamicForm.find('.welcome_logout').append('<input class="welcome" id="welcome" type="text" placeholder="로그인을 해주세요." value="${welcome }" readonly="readonly">');
+  dynamicForm.find('.welcome_logout').append('&nbsp;&nbsp;&nbsp;<input type="submit" id="logout" class="img-button" value="logout">');
+  dynamicForm.append('</span>');
+
+  // 동적으로 생성한 form을 #logoutForm div에 삽입
+  $('#logoutForm').append(dynamicForm);
+
+	if
+	
+	
+	
+	$("#logout").on("click",function(event) {
+		let confirmLogout = confirm("로그아웃 하시겠습니까?")
+		    if (!confirmLogout) {
+			// "Yes"를 선택한 경우에만 이벤트 진행
+			event.preventDefault(); // "No"일 경우 form submit 중지
+        }
+	});
+}); 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mvcBoard_01/src/main/resources/mapper/BDoa.xml&apos; to &apos;BDao.xml&apos;" description="Rename resource &apos;BDoa.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/mapper/BDoa.xml" name="BDao.xml" stamp="1708394014985" updateReferences="true"/>
+</session>

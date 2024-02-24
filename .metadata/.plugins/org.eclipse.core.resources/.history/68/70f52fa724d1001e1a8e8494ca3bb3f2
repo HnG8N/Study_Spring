@@ -1,0 +1,10 @@
+package com.springlec.base.contorller;
+
+import jakarta.servlet.annotation.WebServlet;
+
+@WebServlet(urlPatterns = "/test")
+public class Test {
+	
+	
+
+}

@@ -1,0 +1,5 @@
+package com.springlec.base.controller.admin;
+
+public class AdminContoroller {
+
+}

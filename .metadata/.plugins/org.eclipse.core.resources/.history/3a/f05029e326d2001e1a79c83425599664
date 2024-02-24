@@ -1,0 +1,7 @@
+package com.springlec.base.service.admin;
+
+public interface ProductCrudService {
+	
+	public void ProductInsertTask() throws Exception;
+
+}

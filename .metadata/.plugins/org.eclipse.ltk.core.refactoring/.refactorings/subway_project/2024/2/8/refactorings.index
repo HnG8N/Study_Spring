@@ -1,0 +1,43 @@
+1708417472762	Rename resource 'default.jsp'
+1708501911475	Move 'images' to 'WEB-INF'
+1708502026699	Move 'images' to 'resources'
+1708502132093	Move 'images' to 'static'
+1708502389979	Rename resource 'default_tes.js'
+1708502532943	Copy file
+1708502537320	Delete element
+1708502565230	Delete element
+1708504290026	Delete element
+1708504798608	Move 'adminheaderfooter' to 'views'
+1708505793544	Delete element
+1708506205872	Delete element
+1708507299317	Delete element
+1708507304572	Delete element
+1708509764034	Delete element
+1708509961409	Delete element
+1708510408230	Delete element
+1708510449877	Delete element
+1708510483401	Delete element
+1708510727646	Delete element
+1708568267343	Delete element
+1708572312371	Move 'LoginVerification_Dao.xml' to 'mapper'
+1708577236112	Delete element
+1708577240830	Rename resource 'LoginVerification_Dao.xml'
+1708577257229	Rename resource 'admin.xml'
+1708577496110	Rename resource 'adminDao.xml'
+1708578234718	Move 'home.jsp' to 'admin'
+1708578531538	Delete element
+1708578549803	Delete element
+1708578693742	Delete element
+1708578895897	Delete element
+1708578968763	Delete elements
+1708591427358	Move 'lib' to 'src'
+1708591509132	Delete element
+1708674593206	Copy files
+1708674599607	Delete elements
+1708676518252	Delete element
+1708676619630	Delete element
+1708677396724	Delete element
+1708678955453	Delete element
+1708679171062	Delete elements
+1708679178431	Delete elements
+1708679257305	Delete element
